@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
     <div class="w-screen h-screen flex">
         <div class="w-[20%] h-screen bg-amber-50">
             <div class="flex items-center py-5 px-3 justify-between">
@@ -45,6 +45,15 @@
             </div>
         </div>
         <div class="w-[80%] h-screen bg-gray-50">
+            <div class="relative flex items-center justify-end py-3 px-6">
+                <div>
+                    <i class="fa-solid fa-gear h-10 w-10" id="settingsBtn"></i>
+                </div>
+                <ul id="settingsDropdown" class="absolute left-0 top-full mt-1 w-40 border border-stone-400 rounded-md shadow-md hidden bg-white z-10">
+                    <li id="darkModeToggle" class="px-3 py-2 text-sm hover:bg-gray-200 cursor-pointer" >Dark Mode</li>
+                </ul>
+
+            </div>
             <div id="taskBox" class="task-box hidden flex mt-20  justify-center">
                 <div class="bg-white shadow-lg px-4 py-3 shadow-neutral-300 rounded-md w-[50vw] h-[15vw] ">
                     <input type="text" class="outline-none mt-3 w-full text-2xl font-bold" name="newtask" id=""

@@ -89,3 +89,26 @@ function resetBtn() {
 }
 resetBtn();
 
+function themeToggle() {
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+    } else {
+        document.documentElement.classList.remove("dark");
+    }
+
+    document.getElementById("settingsBtn").addEventListener("click", function(e) {
+        e.stopPropagation();
+        document.getElementById("settingsDropdown").classList.toggle("hidden");
+    });
+
+    document.getElementById("darkModeToggle").addEventListener("click", function () {
+        document.documentElement.classList.toggle("dark");
+
+        if (document.documentElement.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+}
+document.addEventListener("DOMContentLoaded", themeToggle);
